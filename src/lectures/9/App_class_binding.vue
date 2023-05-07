@@ -4,7 +4,7 @@
 			class="text"
 			:class="[isActive ? 'active-class' : 'class', errorClass, classObject]"
 		>
-			텍스트 입니다.
+			중요 공지사항입니다.
 		</div>
 		<button v-on:click="toggle">toggle</button>
 		<button v-on:click="hasError = !hasError">toggleError</button>
