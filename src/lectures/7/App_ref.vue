@@ -13,11 +13,13 @@ export default {
 		let message = ref('Hello Vue!');
 
 		const addMessage = () => {
-			message.value = message.value + '!';
+			message.value += '!';
 		};
+
 		console.log(message);
 		console.log('message: ', message.value);
 		console.log('message typeof: ', typeof message.value);
+
 		return {
 			message,
 			addMessage,

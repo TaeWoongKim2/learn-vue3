@@ -18,11 +18,11 @@ export default {
 			price: '무료',
 		});
 
-		// const { author, title } = toRefs(book);
-		const author = toRef(book, 'author');
-		const title = toRef(book, 'title');
+		const { author, title } = toRefs(book);
+		const author2 = toRef(book, 'author');
+		const title2 = toRef(book, 'title');
 
-		return { author, title, book };
+		return { author, title, book, author2, title2 };
 	},
 };
 </script>
