@@ -2,12 +2,16 @@
 	<div>
 		<h2>{{ teacher.name }}</h2>
 		<h3>강의가 있습니까?</h3>
-		<!-- <p>{{ teacher.lectures.length > 0 ? '있음 🙂' : '없음 🥲' }}</p> -->
+		<p>{{ teacher.lectures.length > 0 ? '있음 🙂' : '없음 🥲' }}</p>
+		<br />
+
 		<p>{{ hasLecture }}</p>
 		<p>{{ hasLecture }}</p>
 		<p>{{ existLecture() }}</p>
 		<p>{{ existLecture() }}</p>
 		<button v-on:click="counter++">Counter: {{ counter }}</button>
+		<br />
+
 		<h2>이름</h2>
 		<p>{{ fullName }}</p>
 	</div>
@@ -23,6 +27,8 @@ export default {
 			lectures: ['HTML/CSS', 'JavaScript', 'Vue3'],
 		});
 
+		// 성능면에서 GOOD
+		// 컴포넌트 내부적으로 캐쉬되기 때문!!!
 		const hasLecture = computed(() => {
 			console.log('computed');
 			return teacher.lectures.length > 0 ? '있음 🙂' : '없음 🥲';
@@ -46,8 +52,10 @@ export default {
 				[firstName.value, lastName.value] = value.split(' ');
 			},
 		});
+
 		console.log('Console 출력: ', fullName.value);
 		fullName.value = '짐 코딩';
+
 		return {
 			teacher,
 			hasLecture,
