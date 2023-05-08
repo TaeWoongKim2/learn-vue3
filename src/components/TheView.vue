@@ -1,6 +1,8 @@
 <template>
 	<main>
 		<div class="container py-4">
+			<PostCreate @create-post="createPost" />
+
 			<div class="row g-3">
 				<div v-for="post in posts" :key="post.id" class="col col-4">
 					<AppCard
@@ -18,10 +20,13 @@
 
 <script>
 import AppCard from '@/components/AppCard.vue';
+import PostCreate from '@/components/PostCreate.vue';
+
 import { reactive } from 'vue';
 export default {
 	components: {
 		AppCard,
+		PostCreate,
 	},
 	setup() {
 		const obj = reactive({
@@ -47,7 +52,12 @@ export default {
 				type: 'notice',
 			},
 		]);
-		return { obj, posts };
+
+		const createPost = title => {
+			console.log('[createPost]', title);
+		};
+
+		return { obj, posts, createPost };
 	},
 };
 </script>
