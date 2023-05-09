@@ -16,9 +16,13 @@ export default {
 	setup() {
 		const staticMessage = inject('static-message', 'default message');
 		const { message, updateMessage } = inject('message');
-		updateMessage('!');
-		message.value = message.value + '!';
+
+		updateMessage('...[UPDATED]');
+
+		message.value = message.value + '!!!!!';
+
 		const count = inject('count');
+
 		return { staticMessage, message, count };
 	},
 };
