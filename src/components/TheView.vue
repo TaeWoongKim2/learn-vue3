@@ -6,6 +6,7 @@
 
 <script>
 import LifecycleHooks from '@/components/LifecycleHooks.vue';
+
 export default {
 	components: { LifecycleHooks },
 	setup() {

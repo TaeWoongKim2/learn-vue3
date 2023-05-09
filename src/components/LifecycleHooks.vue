@@ -11,6 +11,7 @@
 <script>
 import { onBeforeMount, onBeforeUpdate, onMounted, onUpdated, ref } from 'vue';
 import LifecycleChild from './LifecycleChild.vue';
+
 export default {
 	components: {
 		LifecycleChild,
