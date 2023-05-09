@@ -22,8 +22,9 @@
 </template>
 
 <script>
-import TemplateRefsChild from './TemplateRefsChild.vue';
 import { onMounted, ref } from 'vue';
+import TemplateRefsChild from './TemplateRefsChild.vue';
+
 export default {
 	components: {
 		TemplateRefsChild,
@@ -31,6 +32,7 @@ export default {
 	setup() {
 		const input = ref(null);
 		console.log('setup: ', input.value);
+
 		onMounted(() => {
 			input.value.value = 'Hello World!';
 			console.log('onMounted: ', input.value);
@@ -45,6 +47,7 @@ export default {
 		const itemRefs = ref([]);
 
 		const child = ref(null);
+
 		return { input, fruits, itemRefs, child };
 	},
 };
